@@ -1,0 +1,23 @@
+:root {
+  --black: #222;
+  --white: #ccc;
+
+  --font: "Lato", sans-serif;
+  --fs-normal: 16px;
+  --fs-small: var(--fs-normal) / 1.25;
+  --fs-large: var(--fs-normal) * 1.25;
+  --fs-xlarge: var(--fs-normal) * 1.5;
+  --line-height: 1.4;
+}
+
+*,
+*::before,
+*::after {
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 60px;
+}
