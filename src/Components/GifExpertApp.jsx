@@ -3,16 +3,20 @@ import AddCategory from './AddCategory';
 
 const GifExpert = () => {
 
-  // const [categories, setCategories] = useState(['Jujutsu Kaisen', 'One Piece', 'Cats']);
+  const [categories, setCategories] = useState([])
 
+  const handleDelete = () => {
+    setCategories([]);
+  }
 
   return (
   <>
   <h2>Gif Expert App</h2>
-  <AddCategory />
+  <AddCategory setCategories={setCategories}/>
+  <button onClick={handleDelete}>Clean historial!</button>
   <ul>
   {
-    // categories.map(element => <li key={element}>{element}</li>)
+    categories.map(category => <li key={category}>{category}</li>)
   }
   </ul>
   </>
