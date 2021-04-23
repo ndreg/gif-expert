@@ -1,9 +1,10 @@
 import {useState} from 'react';
 import AddCategory from './AddCategory';
+import { GifGrid } from './GifGrid';
 
 const GifExpert = () => {
 
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState(['HxH'])
 
   const handleDelete = () => {
     setCategories([]);
@@ -16,7 +17,9 @@ const GifExpert = () => {
   <button onClick={handleDelete}>Clean historial!</button>
   <ul>
   {
-    categories.map(category => <li key={category}>{category}</li>)
+    categories.map(category => <GifGrid 
+      key={category}
+      category={category}/>)
   }
   </ul>
   </>
