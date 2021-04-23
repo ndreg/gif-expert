@@ -12,10 +12,8 @@ const AddCategory = ({setCategories}) => {
   const handleSubmit = e => {
     e.preventDefault();
     if(inputValue.trim().length > 0){
-      setCategories(category => [inputValue,...category]);
+      setCategories(category => [inputValue, ...category]);
       setInputValue('');
-    }else {
-      console.log("not valid")
     }
   }
 
@@ -31,7 +29,6 @@ const AddCategory = ({setCategories}) => {
     </form>
   )
 }
-
 
 AddCategory.propTypes = {
   setCategories: PropTypes.func.isRequired,
