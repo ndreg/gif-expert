@@ -4,7 +4,7 @@ import { GifGrid } from './GifGrid';
 
 const GifExpert = () => {
 
-  const [categories, setCategories] = useState(['HxH'])
+  const [categories, setCategories] = useState([''])
 
   const handleDelete = () => {
     setCategories([]);
@@ -12,9 +12,10 @@ const GifExpert = () => {
 
   return (
   <>
-  <h2>Gif Expert App</h2>
+  <div className="search-area">
+  <h2 className="title-app">Gif Expert App</h2>
   <AddCategory setCategories={setCategories}/>
-  <button onClick={handleDelete}>Clean historial!</button>
+  </div>
   <ul>
   {
     categories.map(category => <GifGrid 

@@ -1,12 +1,13 @@
 import {useState, useEffect} from 'react';
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ({category}) => {
+
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     getGifs();
   }, [])
-
-  const [count, setCount] = useState(0)
 
   const getGifs = async()=> {
     let url = await fetch(`https://api.giphy.com/v1/gifs/search?q=Jujutsu Kaisen&api_key=IBnVIMwRONZOYHwLyV8PTX9kflzRGHyG&limit=10`)
@@ -18,15 +19,24 @@ export const GifGrid = ({category}) => {
         gif: img.images.downsized_medium.url,
       }
     })
-    console.log(gifs)
-}
 
+    console.log(gifs)
+    setImages(gifs)
+}
 
   return (
     <>
-    <h1>{category}</h1>
-    <h2>{count}</h2>
-    <button onClick={() => setCount(count+1)}>Aumenta</button>
+    <h3>{category}</h3>
+    <div className="gif-grid">
+    {
+      images.map(img => (
+        <GifGridItem
+          key={img.id}
+          {...img}
+          />
+      ))
+    }
+    </div>
     </>
 
   )

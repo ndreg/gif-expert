@@ -24,6 +24,48 @@ body {
 }
 
 .input--text {
-  width: 100%;
+  width: 80%;
   font-size: var(--fs-small);
+}
+
+.gif-card {
+  background: var(--white);
+  border-radius: 0.25rem;
+  margin-bottom: 30px;
+  object-fit: contain;
+  overflow: hidden;
+  width: 350px;
+}
+
+.gif-card img {
+  width: 100%;
+}
+
+.gif-card p {
+  font-size: var(--fs-large);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.gif-grid {
+  align-items: center;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+}
+
+.search-area,
+.form-area {
+  display: flex;
+}
+
+.search-area {
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+.form-area {
+  gap: 15px;
 }

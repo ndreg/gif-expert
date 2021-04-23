@@ -20,14 +20,14 @@ const AddCategory = ({setCategories}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-area">
       <input 
         className="input--text" 
         type="text"
         value={inputValue}
         onChange={handleValue}
       />
-      <button>Add a new category!</button>
+      <button className="input--search">Search</button>
     </form>
   )
 }
