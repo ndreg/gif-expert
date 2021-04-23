@@ -12,7 +12,7 @@ const AddCategory = ({setCategories}) => {
   const handleSubmit = e => {
     e.preventDefault();
     if(inputValue.trim().length > 0){
-      setCategories(category => [...category, inputValue]);
+      setCategories(category => [inputValue,...category]);
       setInputValue('');
     }else {
       console.log("not valid")

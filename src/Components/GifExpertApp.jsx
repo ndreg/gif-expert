@@ -6,10 +6,6 @@ const GifExpert = () => {
 
   const [categories, setCategories] = useState([''])
 
-  const handleDelete = () => {
-    setCategories([]);
-  }
-
   return (
   <>
   <div className="search-area">
